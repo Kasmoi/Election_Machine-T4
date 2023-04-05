@@ -1,4 +1,4 @@
-#test if pull does echo
+#test if pull does echo testing
 name: My first workflow # The name of the workflow, can be any string
 on: [push] # The event that triggers this workflow - in this case, a push to the default branch
 
