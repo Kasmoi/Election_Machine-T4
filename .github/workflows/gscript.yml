@@ -41,8 +41,4 @@ jobs: # The jobs that run in this workflow
 
 
 # Comment on when an users opens the first pull request 
-      - name: Comment PR
-        uses: thollander/actions-comment-pull-request@v2
-        with:
-          message: |
-            This is a pull message
+#added as a seperate file ./pull
