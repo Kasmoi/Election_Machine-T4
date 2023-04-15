@@ -1,0 +1,13 @@
+name: pull
+on: pull_request
+
+jobs:
+  example_comment_pr:
+    runs-on: ubuntu-latest
+    name: comment pull req
+    steps:
+        - uses: actions/first-interaction@v1
+          with:
+            repo-token: ${{ secrets.GITHUB_TOKEN }}
+            
+            pr-message: "congratulations on your first pull request"
