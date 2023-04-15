@@ -4,6 +4,7 @@ on: # This action will trigger when an issue is reopened or opened.
     types:
       - reopened
       - opened
+      - closed
 jobs: # The jobs that run in this workflow
   label_issues: # the first job is named as label_issues
     runs-on: ubuntu-latest # This job will run on the latest version of Ubuntu.
@@ -27,5 +28,9 @@ jobs: # The jobs that run in this workflow
           body: | # The body of the comment is a message thanking the user for opening the issue.
            Thanks for opening this issue! We'll take a look as soon as possible.
 # Comment on when an issue is closed
-
+      - name: Comment on close issue
+      - uses: aws-actions/closed-issue-message@v1
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          message: "Comments on closed issues are hard for our team to see." 
 # Comment on when an users opens the first pull request 
