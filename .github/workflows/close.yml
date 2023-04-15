@@ -1,0 +1,17 @@
+name: close issue msg
+on: 
+  issues:
+    types:
+      - closed
+      
+jobs: # The jobs that run in this workflow
+  close_msg: # the first job is named as label_issues
+    runs-on: ubuntu-latest # This job will run on the latest version of Ubuntu.
+    permissions: # This job requires write access to issues in order to add labels and comment.
+      issues: write
+    steps:
+        uses: aws-actions/closed-issue-message@v1
+        with:
+            # These inputs are both required
+            repo-token: "${{ secrets.GITHUB_TOKEN }}"
+            message: "Comments on closed issues are hard for our team to see." 
