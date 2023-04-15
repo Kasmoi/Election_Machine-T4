@@ -4,7 +4,7 @@ on: # This action will trigger when an issue is reopened or opened.
     types:
       - reopened
       - opened
-     # - closed
+      - closed
       
 jobs: # The jobs that run in this workflow
   label_issues: # the first job is named as label_issues
@@ -23,12 +23,12 @@ jobs: # The jobs that run in this workflow
               labels: ["issue", "fix"]
             })
       
-      #- name: Closed Issue Message
-       # uses: aws-actions/closed-issue-message@v1
-        #with:
+      - name: Closed Issue Message
+        uses: aws-actions/closed-issue-message@v1
+        with:
             # These inputs are both required
-         #   repo-token: "${{ secrets.GITHUB_TOKEN }}"
-          #  message: "Comments on closed issues are hard for our team to see." 
+            repo-token: "${{ secrets.GITHUB_TOKEN }}"
+            message: "Comments on closed issues are hard for our team to see." 
 
       - name: Comment on new issue #this is another step that comments on the issue 
         uses: peter-evans/create-or-update-comment@v1 # This step uses the "peter-evans/create-or-update-comment" action to create or update a comment on the issue.
