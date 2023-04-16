@@ -32,12 +32,12 @@ jobs: # The jobs that run in this workflow
 # Comment on when an issue is closedzz
 
      
-      - name: Closed Issue Message
-        uses: aws-actions/closed-issue-message@v1
-        with:
+     # - name: Closed Issue Message
+      #  uses: aws-actions/closed-issue-message@v1
+       # with:
             # These inputs are both required
            # repo-token: "${{ secrets.GITHUB_TOKEN }}"
-            message: "Comments on closed issues are hard for our team to see." 
+        #    message: "Comments on closed issues are hard for our team to see." 
 
 
 # Comment on when an users opens the first pull request 
