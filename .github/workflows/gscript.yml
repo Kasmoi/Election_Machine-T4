@@ -1,7 +1,7 @@
 name: Label & comment issues #the name of the workflow
 on: # This action will trigger when an issue is reopened or opened.
   issues:
-    types: [reopened, opended, closed]
+    types: [reopened, opened, closed]
       #- reopened
       #- opened
       #- closed
@@ -36,7 +36,7 @@ jobs: # The jobs that run in this workflow
         uses: aws-actions/closed-issue-message@v1
         with:
             # These inputs are both required
-            repo-token: "${{ secrets.GITHUB_TOKEN }}"
+           # repo-token: "${{ secrets.GITHUB_TOKEN }}"
             message: "Comments on closed issues are hard for our team to see." 
 
 
