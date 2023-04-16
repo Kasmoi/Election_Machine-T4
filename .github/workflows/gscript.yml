@@ -1,7 +1,8 @@
 name: Label & comment issues #the name of the workflow
 on: # This action will trigger when an issue is reopened or opened.
   issues:
-    types: [reopened, opened, closed]
+    types: [closed]
+    
       #- reopened
       #- opened
       #- closed
@@ -28,17 +29,15 @@ jobs: # The jobs that run in this workflow
         with:
           issue-number: ${{ github.event.issue.number }} # The issue number is obtained from the context of the event that triggered the action.
           body: | # The body of the comment is a message thanking the user for opening the issue.
-           Thanks for opening this issue! We'll take a look as soon as possible.
+           Thanks for closing the issue.
 # Comment on when an issue is closedzz
 
      
-     # - name: Closed Issue Message
-      #  uses: aws-actions/closed-issue-message@v1
-       # with:
-            # These inputs are both required
-           # repo-token: "${{ secrets.GITHUB_TOKEN }}"
-        #    message: "Comments on closed issues are hard for our team to see." 
+      
+#jobs:
+ # comment:
+  #  runs-on: ubuntu-latest
 
-
+        
 # Comment on when an users opens the first pull request 
 #added as a seperate file ./pull
